@@ -1,15 +1,23 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-funolympics-dev-183425-authRole",
-      "UnauthRoleArn": "arn:aws:iam::696170982176:role/amplify-funolympics-dev-183425-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::696170982176:role/amplify-funolympics-dev-183425-authRole",
+      "AuthRoleName": "amplify-funolympics-dev-184325-authRole",
+      "UnauthRoleArn": "arn:aws:iam::696170982176:role/amplify-funolympics-dev-184325-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::696170982176:role/amplify-funolympics-dev-184325-authRole",
       "Region": "us-west-1",
-      "DeploymentBucketName": "amplify-funolympics-dev-183425-deployment",
-      "UnauthRoleName": "amplify-funolympics-dev-183425-unauthRole",
-      "StackName": "amplify-funolympics-dev-183425",
-      "StackId": "arn:aws:cloudformation:us-west-1:696170982176:stack/amplify-funolympics-dev-183425/ce57d100-739f-11ee-9621-0671a6996139",
-      "AmplifyAppId": "d29ddejko7296o"
+      "DeploymentBucketName": "amplify-funolympics-dev-184325-deployment",
+      "UnauthRoleName": "amplify-funolympics-dev-184325-unauthRole",
+      "StackName": "amplify-funolympics-dev-184325",
+      "StackId": "arn:aws:cloudformation:us-west-1:696170982176:stack/amplify-funolympics-dev-184325/8fc5fe30-75fc-11ee-b19f-02fba447afb9",
+      "AmplifyAppId": "d1rtw7mvdh8nfk"
+    },
+    "categories": {
+      "auth": {
+        "funolympics5e6d275f": {}
+      },
+      "api": {
+        "funolympics": {}
+      }
     }
   }
 }
