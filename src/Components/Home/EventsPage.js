@@ -58,11 +58,11 @@ function EventsPage() {
                             <Divider  className='my-1'/>
                          </Row> 
                     {eventsData.map((event)=>{
-                         <Row>
+                         return (<Row>
                              <Col>{event.summary}</Col>
                             <Col>{event.zip}</Col>
                             <Col>{event.phone}</Col>
-                         </Row>   
+                         </Row>)   
                     })}
                      <Row>
                             <Divider  className='my-5'/>
