@@ -4,12 +4,12 @@ import { Row, Col, Form, Button, Container } from 'react-bootstrap';
 class RegisterPage extends Component {
     render() {
         return (
-            <Container>
-            <Row className="px-4 my-5">
+            <Container fluid className="px-5 py-5 generic-container ">
+            <Row>
                 <Col><h1>Register</h1></Col>
             </Row>
-            <Row className="px-4 my-5">
-                <Col sm={6}>
+            <Row>
+                <Col>
                     <Form>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email Address</Form.Label>

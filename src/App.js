@@ -10,9 +10,10 @@ import BasketballPage from './Components/Home/BasketballPage';
 import VolleyballPage from './Components/Home/VolleyballPage';
 import TennisPage from './Components/Home/TennisPage';
 import SideBar from './Components/Common/SideBar';
-import LoginPage from './Components/Auth/LoginPage';
-import RegisterPage from './Components/Auth/RegisterPage';
+import {Login} from './Components/Auth/Login';
+import Register from './Components/Auth/Register';
 import ChampionsPage from './Components/Home/ChampionsPage';
+import Profile from './Components/Home/Profile';
 
 import { Route, Routes } from 'react-router-dom';
 import { Row, Col, Container, Image, Button, Nav } from 'react-bootstrap';
@@ -24,6 +25,9 @@ import awsExports from './aws-exports';
 import './App.css';
 import '@aws-amplify/ui-react/styles.css';
 import EventsPage from './Components/Home/EventsPage';
+import { RequireAuth } from './Components/Auth/RequireAuth';
+import { Layout } from './Components/Common/Layout';
+
 Amplify.configure(awsExports);
 
 function App() {
@@ -31,35 +35,31 @@ function App() {
 
   } 
   return (
-    <Authenticator loginMechanisms={['email']} components={components}>
-    {({ signOut, user }) => (
+    <Authenticator.Provider>
       <div>
-      <NavigationBar  logOut={signOut}/>
-      <Container fluid className='px-5 my-5'>
+      <NavigationBar />
+      <Container fluid className='my-5 app-body'>
                 <Row >
-                    <Col sm={10}>
+                    <Col sm={12}>
                       <Routes>
-                      <Route path='*' element = {<HomePage/>} />
-                      <Route path='/' exact={true} element = {<HomePage/>} />
-                      <Route path='/login' element = {<LoginPage/>} />
-                      <Route path='/register' element = {<RegisterPage/>} />
-                      <Route path='/soccer' element = {<SoccerPage/>} />
-                      <Route path='/basketball' element = {<BasketballPage/>} />
-                      <Route path='/volleyball' element = {<VolleyballPage/>} />
-                      <Route path='/tennis' element = {<TennisPage/>} />
-                      <Route path='/events' element = {<EventsPage/>} />
-                      <Route path='/champions' element = {<ChampionsPage/>} />
-                    </Routes>
-                    </Col>
-                    <Col sm={2}>
-                       <SideBar />    
-                    </Col>
+                      <Route path="/" element={<Layout />}>
+                        <Route index path='/' exact={true} element = {<HomePage/>} />
+                        <Route path='/login' element = {<Login/>} />
+                        <Route path='/profile' element = {<Profile />} />
+                        <Route path='/soccer' element = {<SoccerPage/>} />
+                        <Route path='/basketball' element = {<BasketballPage/>} />
+                        <Route path='/volleyball' element = {<VolleyballPage/>} />
+                        <Route path='/tennis' element = {<TennisPage/>} />
+                        <Route path='/events' element = {<EventsPage/>} />
+                        <Route path='/champions' element = {<RequireAuth><ChampionsPage/></RequireAuth>} />
+                      </Route>  
+                  </Routes>
+                  </Col>
                 </Row>
-            </Container>
-     <FooterBar />
+      </Container>
+      <FooterBar/>
       </div>
-    )}
-    </Authenticator>
+    </Authenticator.Provider>
   );
 }
 

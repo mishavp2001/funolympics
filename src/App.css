@@ -1,12 +1,101 @@
+.app-body {
+    background-color: rgb(1, 16, 69);
+    padding: 5em;
+}
+
+.app-footer {
+    background-color: rgb(20, 161, 226);
+    padding: 1em;
+    color: white;
+    margin-top: -3em;;  
+}
+
+.side-bar {
+    background-color:  rgb(244, 252, 8);
+    height: 100%;
+    border-radius: 2em;
+}
+
+.side-bar a {
+    color:rgb(1, 17, 31);
+    font-weight: 500;
+}
+
 .small-form {
     padding: 1em;
-    background-color: rgb(213, 213, 213);
+    background-color: rgb(117, 175, 101);
+    border-radius: 2em;
 }
 
-.color-container {
- background-color: rgb(184, 219, 237);
+.home-container {
+ background-color: rgb(128, 220, 97);
 }
 
-.color-container > div {
+.home-container > div {
+    padding: 4em;
+}
+
+.navbar  .nav-link {
+    color: white;
+}
+.events-header {
+    margin-right: 1em;
     padding: 1em;
+}
+.events-data.row {
+    margin-right: 1em;
+    border-bottom: 1px solid gray;
+}
+
+.events-container {
+    background-color: rgb(10, 98, 156);
+    color: rgb(255, 255, 255);
+}
+
+.champions-container {
+    background-color: rgb(243, 255, 6);
+    color: rgb(2, 2, 109);
+    font-weight: 600;
+}
+
+.generic-container, .login-container {
+    background-color: rgb(216, 155, 14);
+    color: rgb(255, 255, 255);
+}
+.events-container > div, .champions-container > div, .generic-container > div {
+    padding: 3em;
+}
+
+.home-container .login-container {
+
+    background: none;
+}
+
+.my-6 {
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+.navbar-dark.bg-info {
+    background-color:rgb(223 90 0)!important;
+    font-weight:800;
+    color: white;
+    height: 6em;
+
+    .navbar-brand {
+        font-size: 2em;
+    }
+}
+
+.dropdown-menu.show, .login-nav {
+    background-color: rgb(219, 106, 40);
+    text-align: left;
+    color: white;
+}
+.dropdown-menu.show > .nav-link, .dropdown-menu.show > .dropdown-item{
+    color: white;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: aliceblue!important;
 }

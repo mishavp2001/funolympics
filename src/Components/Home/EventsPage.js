@@ -46,30 +46,27 @@ function EventsPage() {
     };
 
     return (
-        <Container fluid className='px-5 my-5'>
+        <Container fluid className='px-5 py-5 events-container'>
             <Row>
-            <Col style={{marginRight:'1em'}} sm={6}>
-                         <Row>
-                            <Col>Events</Col>
-                            <Col>Location(ZIP)</Col>
-                            <Col>Contacts</Col>
-                         </Row>
-                         <Row>
-                            <Divider  className='my-1'/>
-                         </Row> 
-                    {eventsData.map((event, ind)=>{
-                         return (<Row key={ind}>
-                             <Col>{event.theme || 'Any'} : {event.summary || 'Contact for more information'}</Col>
+                <Col sm={8}>
+                    <Row>
+                        <Col>Events</Col>
+                        <Col>Location(ZIP)</Col>
+                        <Col>Contacts</Col>
+                    </Row>
+                    <Row className='events-header'>
+                        <Divider />
+                    </Row>
+                    {eventsData.map((event, ind) => {
+                        return (<Row className="events-data" key={ind}>
+                            <Col>{event.theme || 'Any'} : {event.summary || 'Contact for more information'}</Col>
                             <Col>{event.zip}</Col>
                             <Col>{event.phone} or {event.email}</Col>
-                         </Row>)   
+                        </Row>)
                     })}
-                     <Row>
-                            <Divider  className='my-5'/>
-                         </Row> 
                 </Col>
-            <Col sm={5} className='small-form'>
-                    <h4>Add Event</h4>
+                <Col sm={4}className='small-form'>
+                    <h4>Add Public Event</h4>
                     <Form>
                         <fieldset>
                             <Form.Group className="mb-3">
@@ -90,7 +87,7 @@ function EventsPage() {
                                     value={eventData.phone}
                                     onChange={evt => setEventData({ ...eventData, phone: evt.target.value })}
                                 />
-                                <br/>
+                                <br />
                                 <Form.Control
                                     type="text"
                                     size="lg"
@@ -99,7 +96,7 @@ function EventsPage() {
                                     value={eventData.email}
                                     onChange={evt => setEventData({ ...eventData, email: evt.target.value })}
                                 />
-                                <br/>
+                                <br />
                                 <Form.Label>Summary of the Event</Form.Label>
                                 <Form.Control as="textarea"
                                     value={eventData.summary}

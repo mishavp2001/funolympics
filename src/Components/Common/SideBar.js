@@ -4,8 +4,8 @@ import { Container, Nav, Row, Col} from 'react-bootstrap';
 
 const SideBar = props => {
     return (
-        <Container>
-        <Row style={{}}>
+        <Container className='side-bar px-4 py-4'>
+        <Row>
         <Col sm={1}>
         <Nav className='ms-md-auto'>
             <Nav.Link href='/soccer'>Soccer</Nav.Link>
