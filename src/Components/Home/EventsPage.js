@@ -48,7 +48,7 @@ function EventsPage() {
     return (
         <Container fluid className='px-5 my-5'>
             <Row>
-                <Col sm={5}>
+            <Col style={{marginRight:'1em'}} sm={6}>
                          <Row>
                             <Col>Events</Col>
                             <Col>Location(ZIP)</Col>
@@ -57,20 +57,19 @@ function EventsPage() {
                          <Row>
                             <Divider  className='my-1'/>
                          </Row> 
-                    {eventsData.map((event)=>{
-                         return (<Row>
-                             <Col>{event.summary}</Col>
+                    {eventsData.map((event, ind)=>{
+                         return (<Row key={ind}>
+                             <Col>{event.theme || 'Any'} : {event.summary || 'Contact for more information'}</Col>
                             <Col>{event.zip}</Col>
-                            <Col>{event.phone}</Col>
+                            <Col>{event.phone} or {event.email}</Col>
                          </Row>)   
                     })}
                      <Row>
                             <Divider  className='my-5'/>
                          </Row> 
                 </Col>
-            </Row>
-            <Row>
-                <Col sm={5}>
+            <Col sm={5} className='small-form'>
+                    <h4>Add Event</h4>
                     <Form>
                         <fieldset>
                             <Form.Group className="mb-3">
@@ -96,7 +95,7 @@ function EventsPage() {
                                     type="text"
                                     size="lg"
                                     placeholder="Email"
-                                    aria-label="pemailhone"
+                                    aria-label="email"
                                     value={eventData.email}
                                     onChange={evt => setEventData({ ...eventData, email: evt.target.value })}
                                 />
