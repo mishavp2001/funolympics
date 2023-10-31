@@ -1,0 +1,12 @@
+.small-form {
+    padding: 1em;
+    background-color: rgb(213, 213, 213);
+}
+
+.color-container {
+ background-color: rgb(184, 219, 237);
+}
+
+.color-container > div {
+    padding: 1em;
+}
