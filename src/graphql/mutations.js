@@ -1,6 +1,93 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const createAttendence = /* GraphQL */ `
+  mutation CreateAttendence(
+    $input: CreateAttendenceInput!
+    $condition: ModelAttendenceConditionInput
+  ) {
+    createAttendence(input: $input, condition: $condition) {
+      id
+      attendence {
+        id
+        zip
+        theme
+        summary
+        phone
+        email
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      phone
+      email
+      paid
+      eventID
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updateAttendence = /* GraphQL */ `
+  mutation UpdateAttendence(
+    $input: UpdateAttendenceInput!
+    $condition: ModelAttendenceConditionInput
+  ) {
+    updateAttendence(input: $input, condition: $condition) {
+      id
+      attendence {
+        id
+        zip
+        theme
+        summary
+        phone
+        email
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      phone
+      email
+      paid
+      eventID
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deleteAttendence = /* GraphQL */ `
+  mutation DeleteAttendence(
+    $input: DeleteAttendenceInput!
+    $condition: ModelAttendenceConditionInput
+  ) {
+    deleteAttendence(input: $input, condition: $condition) {
+      id
+      attendence {
+        id
+        zip
+        theme
+        summary
+        phone
+        email
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      phone
+      email
+      paid
+      eventID
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
 export const createEvent = /* GraphQL */ `
   mutation CreateEvent(
     $input: CreateEventInput!
@@ -19,6 +106,7 @@ export const createEvent = /* GraphQL */ `
       }
       createdAt
       updatedAt
+      owner
       __typename
     }
   }
@@ -41,6 +129,7 @@ export const updateEvent = /* GraphQL */ `
       }
       createdAt
       updatedAt
+      owner
       __typename
     }
   }
@@ -63,90 +152,7 @@ export const deleteEvent = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      __typename
-    }
-  }
-`;
-export const createAttendence = /* GraphQL */ `
-  mutation CreateAttendence(
-    $input: CreateAttendenceInput!
-    $condition: ModelAttendenceConditionInput
-  ) {
-    createAttendence(input: $input, condition: $condition) {
-      id
-      attendence {
-        id
-        zip
-        theme
-        summary
-        phone
-        email
-        createdAt
-        updatedAt
-        __typename
-      }
-      phone
-      email
-      paid
-      createdAt
-      updatedAt
-      eventAttendenceId
-      __typename
-    }
-  }
-`;
-export const updateAttendence = /* GraphQL */ `
-  mutation UpdateAttendence(
-    $input: UpdateAttendenceInput!
-    $condition: ModelAttendenceConditionInput
-  ) {
-    updateAttendence(input: $input, condition: $condition) {
-      id
-      attendence {
-        id
-        zip
-        theme
-        summary
-        phone
-        email
-        createdAt
-        updatedAt
-        __typename
-      }
-      phone
-      email
-      paid
-      createdAt
-      updatedAt
-      eventAttendenceId
-      __typename
-    }
-  }
-`;
-export const deleteAttendence = /* GraphQL */ `
-  mutation DeleteAttendence(
-    $input: DeleteAttendenceInput!
-    $condition: ModelAttendenceConditionInput
-  ) {
-    deleteAttendence(input: $input, condition: $condition) {
-      id
-      attendence {
-        id
-        zip
-        theme
-        summary
-        phone
-        email
-        createdAt
-        updatedAt
-        __typename
-      }
-      phone
-      email
-      paid
-      createdAt
-      updatedAt
-      eventAttendenceId
+      owner
       __typename
     }
   }

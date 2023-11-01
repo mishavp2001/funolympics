@@ -9,7 +9,6 @@ import { useAuthenticator } from '@aws-amplify/ui-react';
 function HomePage() {
 
     const AuthContext = useAuthenticator((context) => [context]);
-debugger;
         return (
             <Container fluid className='px-1 home-container'>
                 <Row className='font-weight-light'>
