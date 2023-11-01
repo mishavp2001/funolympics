@@ -15,5 +15,4 @@ type Attendence @model @auth(rules: [{allow: private}]) {
   email: String!
   paid: Boolean!
   eventID: ID! @index(name: "byEvent")
-}
- 
+} 

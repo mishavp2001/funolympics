@@ -14,22 +14,22 @@
         "authConfig": {
           "additionalAuthenticationProviders": [
             {
-              "apiKeyConfig": {
-                "apiKeyExpirationDate": "2023-12-01T05:46:26.304Z",
-                "apiKeyExpirationDays": 30,
-                "description": "funapi"
-              },
-              "authenticationType": "API_KEY"
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authfunolympics5e6d275f"
+              }
             },
             {
               "authenticationType": "AWS_IAM"
             }
           ],
           "defaultAuthentication": {
-            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
-            "userPoolConfig": {
-              "userPoolId": "authfunolympics5e6d275f"
-            }
+            "apiKeyConfig": {
+              "apiKeyExpirationDate": "2024-10-31T19:08:14.860Z",
+              "apiKeyExpirationDays": 365,
+              "description": "funapi"
+            },
+            "authenticationType": "API_KEY"
           }
         }
       },

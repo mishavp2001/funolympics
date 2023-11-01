@@ -4,15 +4,15 @@
     "apiName": "funolympics",
     "serviceName": "AppSync",
     "defaultAuthType": {
-      "mode": "AMAZON_COGNITO_USER_POOLS",
-      "cognitoUserPoolId": "authfunolympics5e6d275f"
+      "mode": "API_KEY",
+      "expirationTime": 365,
+      "apiKeyExpirationDate": "2024-10-31T19:08:14.860Z",
+      "keyDescription": "funapi"
     },
     "additionalAuthTypes": [
       {
-        "mode": "API_KEY",
-        "expirationTime": 30,
-        "apiKeyExpirationDate": "2023-12-01T05:46:26.304Z",
-        "keyDescription": "funapi"
+        "mode": "AMAZON_COGNITO_USER_POOLS",
+        "cognitoUserPoolId": "authfunolympics5e6d275f"
       },
       {
         "mode": "AWS_IAM"
