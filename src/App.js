@@ -29,10 +29,7 @@ import { RequireAuth } from './Components/Auth/RequireAuth';
 import { Layout } from './Components/Common/Layout';
 
 Amplify.configure(
-  {...awsExports,
-  DataStore: {
-    authModeStrategyType: AuthModeStrategyType.MULTI_AUTH
-  }}  
+  awsExports
 );
 
 function App() {
