@@ -1,6 +1,75 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const createEvent = /* GraphQL */ `
+  mutation CreateEvent(
+    $input: CreateEventInput!
+    $condition: ModelEventConditionInput
+  ) {
+    createEvent(input: $input, condition: $condition) {
+      id
+      zip
+      theme
+      summary
+      phone
+      email
+      attendence {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const updateEvent = /* GraphQL */ `
+  mutation UpdateEvent(
+    $input: UpdateEventInput!
+    $condition: ModelEventConditionInput
+  ) {
+    updateEvent(input: $input, condition: $condition) {
+      id
+      zip
+      theme
+      summary
+      phone
+      email
+      attendence {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const deleteEvent = /* GraphQL */ `
+  mutation DeleteEvent(
+    $input: DeleteEventInput!
+    $condition: ModelEventConditionInput
+  ) {
+    deleteEvent(input: $input, condition: $condition) {
+      id
+      zip
+      theme
+      summary
+      phone
+      email
+      attendence {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
 export const createAttendence = /* GraphQL */ `
   mutation CreateAttendence(
     $input: CreateAttendenceInput!
@@ -84,75 +153,6 @@ export const deleteAttendence = /* GraphQL */ `
       eventID
       createdAt
       updatedAt
-      __typename
-    }
-  }
-`;
-export const createEvent = /* GraphQL */ `
-  mutation CreateEvent(
-    $input: CreateEventInput!
-    $condition: ModelEventConditionInput
-  ) {
-    createEvent(input: $input, condition: $condition) {
-      id
-      zip
-      theme
-      summary
-      phone
-      email
-      attendence {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-  }
-`;
-export const updateEvent = /* GraphQL */ `
-  mutation UpdateEvent(
-    $input: UpdateEventInput!
-    $condition: ModelEventConditionInput
-  ) {
-    updateEvent(input: $input, condition: $condition) {
-      id
-      zip
-      theme
-      summary
-      phone
-      email
-      attendence {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-  }
-`;
-export const deleteEvent = /* GraphQL */ `
-  mutation DeleteEvent(
-    $input: DeleteEventInput!
-    $condition: ModelEventConditionInput
-  ) {
-    deleteEvent(input: $input, condition: $condition) {
-      id
-      zip
-      theme
-      summary
-      phone
-      email
-      attendence {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
       __typename
     }
   }

@@ -18,7 +18,7 @@ import Profile from './Components/Home/Profile';
 import { Route, Routes } from 'react-router-dom';
 import { Row, Col, Container, Image, Button, Nav } from 'react-bootstrap';
 
-import { Amplify } from 'aws-amplify';
+import { Amplify, AuthModeStrategyType } from 'aws-amplify';
 import { Authenticator, useTheme, Text  } from '@aws-amplify/ui-react';
 import awsExports from './aws-exports';
 
@@ -28,7 +28,12 @@ import EventsPage from './Components/Home/EventsPage';
 import { RequireAuth } from './Components/Auth/RequireAuth';
 import { Layout } from './Components/Common/Layout';
 
-Amplify.configure(awsExports);
+Amplify.configure(
+  {...awsExports,
+  DataStore: {
+    authModeStrategyType: AuthModeStrategyType.MULTI_AUTH
+  }}  
+);
 
 function App() {
   const components = {

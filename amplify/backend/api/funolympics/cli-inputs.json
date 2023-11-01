@@ -9,18 +9,15 @@
     },
     "additionalAuthTypes": [
       {
-        "mode": "AWS_IAM"
+        "mode": "API_KEY",
+        "expirationTime": 30,
+        "apiKeyExpirationDate": "2023-12-01T05:46:26.304Z",
+        "keyDescription": "funapi"
       },
       {
-        "mode": "API_KEY",
-        "keyDescription": "api key description",
-        "expirationTime": 30
+        "mode": "AWS_IAM"
       }
     ],
-    "conflictResolution": {
-      "defaultResolutionStrategy": {
-        "type": "NONE"
-      }
-    }
+    "conflictResolution": {}
   }
 }
