@@ -15,10 +15,14 @@ export const createEvent = /* GraphQL */ `
       email
       attendence {
         nextToken
+        startedAt
         __typename
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       owner
       __typename
     }
@@ -38,10 +42,14 @@ export const updateEvent = /* GraphQL */ `
       email
       attendence {
         nextToken
+        startedAt
         __typename
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       owner
       __typename
     }
@@ -61,10 +69,14 @@ export const deleteEvent = /* GraphQL */ `
       email
       attendence {
         nextToken
+        startedAt
         __typename
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       owner
       __typename
     }
@@ -86,6 +98,9 @@ export const createAttendence = /* GraphQL */ `
         email
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         owner
         __typename
       }
@@ -95,6 +110,9 @@ export const createAttendence = /* GraphQL */ `
       eventID
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -115,6 +133,9 @@ export const updateAttendence = /* GraphQL */ `
         email
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         owner
         __typename
       }
@@ -124,6 +145,9 @@ export const updateAttendence = /* GraphQL */ `
       eventID
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -144,6 +168,9 @@ export const deleteAttendence = /* GraphQL */ `
         email
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         owner
         __typename
       }
@@ -153,6 +180,9 @@ export const deleteAttendence = /* GraphQL */ `
       eventID
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }

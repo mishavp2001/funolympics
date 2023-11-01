@@ -7,10 +7,9 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
+import { Event } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { API } from "aws-amplify";
-import { getEvent } from "../graphql/queries";
-import { updateEvent } from "../graphql/mutations";
+import { DataStore } from "aws-amplify";
 export default function EventUpdateForm(props) {
   const {
     id: idProp,
@@ -51,12 +50,7 @@ export default function EventUpdateForm(props) {
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
-        ? (
-            await API.graphql({
-              query: getEvent.replaceAll("__typename", ""),
-              variables: { id: idProp },
-            })
-          )?.data?.getEvent
+        ? await DataStore.query(Event, idProp)
         : eventModelProp;
       setEventRecord(record);
     };
@@ -130,22 +124,17 @@ export default function EventUpdateForm(props) {
               modelFields[key] = null;
             }
           });
-          await API.graphql({
-            query: updateEvent.replaceAll("__typename", ""),
-            variables: {
-              input: {
-                id: eventRecord.id,
-                ...modelFields,
-              },
-            },
-          });
+          await DataStore.save(
+            Event.copyOf(eventRecord, (updated) => {
+              Object.assign(updated, modelFields);
+            })
+          );
           if (onSuccess) {
             onSuccess(modelFields);
           }
         } catch (err) {
           if (onError) {
-            const messages = err.errors.map((e) => e.message).join("\n");
-            onError(modelFields, messages);
+            onError(modelFields, err.message);
           }
         }
       }}
