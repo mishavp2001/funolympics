@@ -4,24 +4,14 @@
     "apiName": "funolympics",
     "serviceName": "AppSync",
     "defaultAuthType": {
-      "mode": "API_KEY",
-      "expirationTime": 300,
-      "apiKeyExpirationDate": "2024-08-27T20:45:16.540Z",
-      "keyDescription": "apifun"
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authfunolympics5e6d275f"
     },
+    "conflictResolution": {},
     "additionalAuthTypes": [
-      {
-        "mode": "AMAZON_COGNITO_USER_POOLS",
-        "cognitoUserPoolId": "authfunolympics5e6d275f"
-      },
       {
         "mode": "AWS_IAM"
       }
-    ],
-    "conflictResolution": {
-      "defaultResolutionStrategy": {
-        "type": "AUTOMERGE"
-      }
-    }
+    ]
   }
 }

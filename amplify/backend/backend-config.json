@@ -14,22 +14,14 @@
         "authConfig": {
           "additionalAuthenticationProviders": [
             {
-              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
-              "userPoolConfig": {
-                "userPoolId": "authfunolympics5e6d275f"
-              }
-            },
-            {
               "authenticationType": "AWS_IAM"
             }
           ],
           "defaultAuthentication": {
-            "apiKeyConfig": {
-              "apiKeyExpirationDate": "2024-08-27T20:45:16.540Z",
-              "apiKeyExpirationDays": 300,
-              "description": "apifun"
-            },
-            "authenticationType": "API_KEY"
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authfunolympics5e6d275f"
+            }
           }
         }
       },
@@ -40,7 +32,17 @@
   "auth": {
     "funolympics5e6d275f": {
       "customAuth": false,
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "funolympics5e6d275fCustomMessage",
+          "triggerProvider": "Cognito"
+        }
+      ],
       "frontendAuthConfig": {
         "mfaConfiguration": "OFF",
         "mfaTypes": [
@@ -63,6 +65,71 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
+    },
+    "userPoolGroups": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID",
+            "IdentityPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "funolympics5e6d275f"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito-UserPool-Groups"
+    }
+  },
+  "function": {
+    "funolympics5e6d275fCustomMessage": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_funolympics5e6d275fCustomMessage_EMAILMESSAGE": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "funolympics5e6d275fCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_funolympics5e6d275fCustomMessage_EMAILSUBJECT": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "funolympics5e6d275fCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_funolympics5e6d275fCustomMessage_REDIRECTURL": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "funolympics5e6d275fCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_funolympics5e6d275fCustomMessage_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "funolympics5e6d275fCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_funolympics5e6d275fCustomMessage_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "funolympics5e6d275fCustomMessage"
+        }
+      ]
     }
   }
 }

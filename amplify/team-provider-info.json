@@ -9,11 +9,22 @@
       "UnauthRoleName": "amplify-funolympics-dev-184325-unauthRole",
       "StackName": "amplify-funolympics-dev-184325",
       "StackId": "arn:aws:cloudformation:us-west-1:696170982176:stack/amplify-funolympics-dev-184325/8fc5fe30-75fc-11ee-b19f-02fba447afb9",
-      "AmplifyAppId": "d1rtw7mvdh8nfk"
+      "AmplifyAppId": "d1rtw7mvdh8nfk",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-funolympics-dev-184325-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "auth": {
-        "funolympics5e6d275f": {}
+        "funolympics5e6d275f": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "funolympics5e6d275fCustomMessage": {
+          "REDIRECTURL": "/index.html",
+          "EMAILSUBJECT": "",
+          "EMAILMESSAGE": "",
+          "deploymentBucketName": "amplify-funolympics-dev-184325-deployment",
+          "s3Key": "amplify-builds/funolympics5e6d275fCustomMessage-614c517969536e576457-build.zip"
+        }
       },
       "api": {
         "funolympics": {}
