@@ -104,15 +104,15 @@ export const schema = {
                             {
                                 "allow": "private",
                                 "operations": [
-                                    "read",
-                                    "create"
+                                    "read"
                                 ]
                             },
                             {
                                 "allow": "public",
                                 "operations": [
                                     "read"
-                                ]
+                                ],
+                                "provider": "iam"
                             }
                         ]
                     }
@@ -224,6 +224,13 @@ export const schema = {
                                     "delete",
                                     "read"
                                 ]
+                            },
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "read"
+                                ],
+                                "provider": "iam"
                             }
                         ]
                     }

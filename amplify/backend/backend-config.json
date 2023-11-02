@@ -1,5 +1,27 @@
 {
   "api": {
+    "AdminQueries": {
+      "authorizationType": "AMAZON_COGNITO_USER_POOLS",
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "funolympics5e6d275f"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "AdminQueries371c5747"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
     "funolympics": {
       "dependsOn": [
         {
@@ -84,6 +106,20 @@
     }
   },
   "function": {
+    "AdminQueries371c5747": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "funolympics5e6d275f"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "funolympics5e6d275fCustomMessage": {
       "build": true,
       "providerPlugin": "awscloudformation",
@@ -91,6 +127,22 @@
     }
   },
   "parameters": {
+    "AMPLIFY_function_AdminQueries371c5747_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "AdminQueries371c5747"
+        }
+      ]
+    },
+    "AMPLIFY_function_AdminQueries371c5747_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "AdminQueries371c5747"
+        }
+      ]
+    },
     "AMPLIFY_function_funolympics5e6d275fCustomMessage_EMAILMESSAGE": {
       "usedBy": [
         {

@@ -16,7 +16,7 @@
     "smsVerificationMessage": "Your verification code is {####}",
     "emailVerificationSubject": "Your verification code",
     "emailVerificationMessage": "Your verification code is {####}",
-    "defaultPasswordPolicy": false,
+    "defaultPasswordPolicy": true,
     "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [],
     "requiredAttributes": [
@@ -29,10 +29,21 @@
       "email"
     ],
     "userpoolClientReadAttributes": [
-      "email"
+      "address",
+      "email",
+      "family_name",
+      "locale",
+      "phone_number",
+      "picture",
+      "profile",
+      "updated_at",
+      "website",
+      "zoneinfo",
+      "email_verified",
+      "phone_number_verified"
     ],
     "userpoolClientLambdaRole": "funoly5e6d275f_userpoolclient_lambda_role",
-    "userpoolClientSetAttributes": false,
+    "userpoolClientSetAttributes": true,
     "sharedId": "5e6d275f",
     "resourceName": "funolympics5e6d275f",
     "authSelections": "identityPoolAndUserPool",
@@ -41,7 +52,7 @@
       "email"
     ],
     "userPoolGroupList": [
-      "funnew"
+      "funolympgroup"
     ],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
@@ -85,6 +96,7 @@
       "Ref": "AWS::StackId"
     },
     "authTriggerConnections": "[\n  {\n    \"triggerType\": \"CustomMessage\",\n    \"lambdaFunctionName\": \"funolympics5e6d275fCustomMessage\"\n  }\n]",
-    "permissions": []
+    "permissions": [],
+    "adminQueryGroup": "funolympgroup"
   }
 }
