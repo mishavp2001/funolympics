@@ -1,6 +1,10 @@
 [
   {
-    "groupName": "funolympgroup",
+    "groupName": "funguest",
     "precedence": 1
+  },
+  {
+    "groupName": "funolympgroup",
+    "precedence": 2
   }
 ]

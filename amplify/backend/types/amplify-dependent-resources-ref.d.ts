@@ -21,6 +21,7 @@ export type AmplifyDependentResourcesAttributes = {
       "UserPoolName": "string"
     },
     "userPoolGroups": {
+      "funguestGroupRole": "string",
       "funolympgroupGroupRole": "string"
     }
   },
