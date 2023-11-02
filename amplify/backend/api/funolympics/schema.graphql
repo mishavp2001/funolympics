@@ -1,4 +1,4 @@
-type Champion @model @auth(rules: [{allow: private, operations: [read]}, {allow: owner}]) {
+type Champion @model @auth(rules: [{allow: private, operations: [read]}, {allow: owner}, {allow: public, operations: [read], provider: iam}]) {
   id: ID!
   name: String!
   address: String

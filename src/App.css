@@ -11,7 +11,7 @@
 }
 
 .side-bar {
-    background-color:  rgb(244, 252, 8);
+    background-color:  rgb(240, 195, 14);
     border-radius: 2em;
 }
 
@@ -55,7 +55,7 @@
 }
 
 .champions-container {
-    background-color: rgb(243, 255, 6);
+    background-color: rgb(240, 195, 14);
     color: rgb(2, 2, 109);
     font-weight: 600;
 }

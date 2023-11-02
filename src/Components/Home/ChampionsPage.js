@@ -7,11 +7,11 @@ import { listChampions } from "../../graphql/queries";
 import { useAuthenticator } from '@aws-amplify/ui-react';
 
 const ChampionsPage = () => {
-    const [championsDataList, setChampionstData] = useState([]);
+    const [championsData, setChampionstData] = useState([]);
     const AuthContext = useAuthenticator((context) => [context]);
     const getChampions = async () => {
         try {
-            championsDataList = await API.graphql(
+            const championsDataList = await API.graphql(
                 {
                     query: listChampions,
                     authMode: 'AWS_IAM'
@@ -35,7 +35,7 @@ const ChampionsPage = () => {
         <Container fluid className='px-5 py-5 champions-container'>
             <Row>
                 <Col>
-                    {championsDataList.map((champ, ind) => {
+                    {championsData.map((champ, ind) => {
                         return (<Row className="events-data" key={ind}>
                             <Col>{champ.name} : {champ.summary}</Col>
                             <Col>{champ.phone}</Col>
