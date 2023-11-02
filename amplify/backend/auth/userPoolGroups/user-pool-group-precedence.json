@@ -1,10 +1,6 @@
 [
   {
-    "groupName": "funguest",
+    "groupName": "olympicsguestpool",
     "precedence": 1
-  },
-  {
-    "groupName": "funolympgroup",
-    "precedence": 2
   }
 ]

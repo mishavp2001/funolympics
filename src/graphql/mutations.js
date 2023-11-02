@@ -1,6 +1,75 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const createChampion = /* GraphQL */ `
+  mutation CreateChampion(
+    $input: CreateChampionInput!
+    $condition: ModelChampionConditionInput
+  ) {
+    createChampion(input: $input, condition: $condition) {
+      id
+      name
+      address
+      records
+      phone
+      summary
+      img
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const updateChampion = /* GraphQL */ `
+  mutation UpdateChampion(
+    $input: UpdateChampionInput!
+    $condition: ModelChampionConditionInput
+  ) {
+    updateChampion(input: $input, condition: $condition) {
+      id
+      name
+      address
+      records
+      phone
+      summary
+      img
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const deleteChampion = /* GraphQL */ `
+  mutation DeleteChampion(
+    $input: DeleteChampionInput!
+    $condition: ModelChampionConditionInput
+  ) {
+    deleteChampion(input: $input, condition: $condition) {
+      id
+      name
+      address
+      records
+      phone
+      summary
+      img
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
+  }
+`;
 export const createEvent = /* GraphQL */ `
   mutation CreateEvent(
     $input: CreateEventInput!

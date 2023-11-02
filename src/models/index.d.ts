@@ -6,6 +6,44 @@ import { LazyLoading, LazyLoadingDisabled, AsyncCollection, AsyncItem } from "@a
 
 
 
+type EagerChampion = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Champion, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly name: string;
+  readonly address?: string | null;
+  readonly records?: (string | null)[] | null;
+  readonly phone?: string | null;
+  readonly summary?: string | null;
+  readonly img?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazyChampion = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Champion, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly name: string;
+  readonly address?: string | null;
+  readonly records?: (string | null)[] | null;
+  readonly phone?: string | null;
+  readonly summary?: string | null;
+  readonly img?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type Champion = LazyLoading extends LazyLoadingDisabled ? EagerChampion : LazyChampion
+
+export declare const Champion: (new (init: ModelInit<Champion>) => Champion) & {
+  copyOf(source: Champion, mutator: (draft: MutableModel<Champion>) => MutableModel<Champion> | void): Champion;
+}
+
 type EagerEvent = {
   readonly [__modelMeta__]: {
     identifier: ManagedIdentifier<Event, 'id'>;

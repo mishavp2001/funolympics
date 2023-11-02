@@ -52,7 +52,6 @@ function EventsPage() {
             console.log(error);
         }
     };
-
     return (
         <Container fluid className='px-5 py-5 events-container'>
             <Row>

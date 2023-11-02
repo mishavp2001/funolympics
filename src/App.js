@@ -65,7 +65,7 @@ function App() {
   return (
     <Authenticator.Provider>
       <div>
-      <NavigationBar signOut={signOut} assessLoggedInState={assessLoggedInState} loggedIn={loggedIn}/>
+      <NavigationBar signOut={signOut} loggedIn={loggedIn}/>
       <Container fluid className='my-5 app-body'>
                 <Row >
                     <Col sm={12}>

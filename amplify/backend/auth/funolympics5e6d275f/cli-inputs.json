@@ -52,8 +52,7 @@
       "email"
     ],
     "userPoolGroupList": [
-      "funguest",
-      "funolympgroup"
+      "olympicsguestpool"
     ],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,

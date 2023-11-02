@@ -1,3 +1,13 @@
+type Champion @model @auth(rules: [{allow: private, operations: [read]}, {allow: owner}]) {
+  id: ID!
+  name: String!
+  address: String
+  records: [String]
+  phone: AWSPhone
+  summary: String
+  img: String
+}
+
 type Event @model @auth(rules: [{allow: owner}, {allow: private, operations: [read]}, {allow: public, operations: [read], provider: iam}]) {
   id: ID!
   zip: String!
@@ -15,4 +25,5 @@ type Attendence @model @auth(rules: [{allow: private}, {allow: public, operation
   email: String!
   paid: Boolean!
   eventID: ID! @index(name: "byEvent")
-} 
+}
+ 

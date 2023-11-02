@@ -1,6 +1,75 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreateChampion = /* GraphQL */ `
+  subscription OnCreateChampion(
+    $filter: ModelSubscriptionChampionFilterInput
+    $owner: String
+  ) {
+    onCreateChampion(filter: $filter, owner: $owner) {
+      id
+      name
+      address
+      records
+      phone
+      summary
+      img
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const onUpdateChampion = /* GraphQL */ `
+  subscription OnUpdateChampion(
+    $filter: ModelSubscriptionChampionFilterInput
+    $owner: String
+  ) {
+    onUpdateChampion(filter: $filter, owner: $owner) {
+      id
+      name
+      address
+      records
+      phone
+      summary
+      img
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const onDeleteChampion = /* GraphQL */ `
+  subscription OnDeleteChampion(
+    $filter: ModelSubscriptionChampionFilterInput
+    $owner: String
+  ) {
+    onDeleteChampion(filter: $filter, owner: $owner) {
+      id
+      name
+      address
+      records
+      phone
+      summary
+      img
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
+  }
+`;
 export const onCreateEvent = /* GraphQL */ `
   subscription OnCreateEvent(
     $filter: ModelSubscriptionEventFilterInput

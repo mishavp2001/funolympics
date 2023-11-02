@@ -22,19 +22,22 @@
 
 .small-form {
     padding: 1em;
-    background-color: rgb(117, 175, 101);
+    background-color: rgb(74, 152, 68);
     border-radius: 2em;
 }
 
 .home-container {
- background-color: rgb(128, 220, 97);
+ background-color: rgb(123, 201, 137);
 }
 
 .home-container > div {
     padding: 4em;
 }
 
-.navbar  .nav-link {
+.navbar-dark .navbar-nav .nav-link {
+    color: white!important; 
+}
+.navbar-dark .navbar-nav .show > .nav-link {
     color: white;
 }
 .events-header {
@@ -59,7 +62,7 @@
 
 .generic-container, .login-container {
     background-color: rgb(216, 155, 14);
-    color: rgb(255, 255, 255);
+    color: rgb(8, 3, 75);
 }
 .events-container > div, .champions-container > div, .generic-container > div {
     padding: 3em;
@@ -76,25 +79,28 @@
 }
 
 .navbar-dark.bg-info {
-    background-color:rgb(223 90 0)!important;
+    background-color: rgb(236, 145, 17)!important;
     font-weight:800;
-    color: white;
+    color: rgb(2, 60, 175)!important;
     height: 6em;
 
     .navbar-brand {
         font-size: 2em;
     }
+
+    .dropdown-menu {
+         background-color: rgb(255 146 72)!important;
+    }
 }
 
 .dropdown-menu.show, .login-nav {
-    background-color: rgb(219, 106, 40);
     text-align: left;
-    color: white;
+    color: rgb(8, 3, 75);
 }
 .dropdown-menu.show > .nav-link, .dropdown-menu.show > .dropdown-item{
-    color: white;
+    color: rgb(3, 19, 68);
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    color: aliceblue!important;
+    color: rgb(8, 3, 75);
 }
