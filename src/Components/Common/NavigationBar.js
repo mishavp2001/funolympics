@@ -26,7 +26,19 @@ const NavigationBar = props => {
     return (
         <header>
             <Navbar variant="dark" expand="lg" bg='info' fixed='top'>
-                <Navbar.Brand href="/">FunOlympics.com</Navbar.Brand>
+                <Navbar.Brand href="/">
+                <span style={{"color":"#FF0000"}}>F</span>
+                <span style={{"color":"rgb(137 16 119)"}}>u</span>
+                <span style={{"color":"rgb(95 128 216)"}}>n</span>
+                <span style={{"color":"rgb(14 56 147)"}}>O</span>
+                <span style={{"color":"rgb(1 44 48)"}}>l</span>
+                <span style={{"color":"rgb(36 92 121)"}}>y</span>
+                <span style={{"color":"rgb(219 20 98)"}}>m</span>
+                <span style={{"color":"#66CC66"}}>p</span>
+                <span style={{"color":"rgb(148 10 157)"}}>i</span>
+                <span style={{"color":"rgb(22 119 22)"}}>c</span>
+                <span style={{"color":"#FF0000"}}>s</span> 
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
