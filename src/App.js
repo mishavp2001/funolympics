@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
-
+import { useState } from 'react';
+import { useEffect } from 'react';
 import NavigationBar from './Components/Common/NavigationBar';
 import FooterBar from './Components/Common/FooterBar ';
 import HomePage from './Components/Home/HomePage';
@@ -18,7 +19,7 @@ import Profile from './Components/Home/Profile';
 import { Route, Routes } from 'react-router-dom';
 import { Row, Col, Container, Image, Button, Nav } from 'react-bootstrap';
 
-import { Amplify, AuthModeStrategyType } from 'aws-amplify';
+import { Amplify, AuthModeStrategyType, Auth } from 'aws-amplify';
 import { Authenticator, useTheme, Text  } from '@aws-amplify/ui-react';
 import awsExports from './aws-exports';
 
@@ -33,13 +34,38 @@ Amplify.configure(
 );
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  const assessLoggedInState = () => {
+      Auth.currentAuthenticatedUser()
+          .then(sess => {
+              console.log('logged in');
+              setLoggedIn(true);
+          })
+          .catch(() => {
+              console.log('not logged in');
+              setLoggedIn(false);
+          });
+  };
+  useEffect(() => {
+      assessLoggedInState();
+  }, []);
+
+  const signOut = async () => {
+      try {
+          await Auth.signOut();
+          setLoggedIn(false);
+      } catch (error) {
+          console.log('error signing out: ', error);
+      }
+  };
   const components = {
 
   } 
   return (
     <Authenticator.Provider>
       <div>
-      <NavigationBar />
+      <NavigationBar signOut={signOut} assessLoggedInState={assessLoggedInState} loggedIn={loggedIn}/>
       <Container fluid className='my-5 app-body'>
                 <Row >
                     <Col sm={12}>

@@ -71,30 +71,15 @@
       ]
     },
     "breakCircularDependency": true,
-    "dependsOn": [
-      {
-        "category": "function",
-        "resourceName": "funolympics5e6d275fCustomMessage",
-        "triggerProvider": "Cognito",
-        "attributes": [
-          "Arn",
-          "Name"
-        ]
-      }
-    ],
-    "userPoolGroups": true,
-    "adminQueries": true,
-    "triggers": {
-      "CustomMessage": [
-        "verification-link"
-      ]
-    },
+    "dependsOn": [],
+    "userPoolGroups": false,
+    "adminQueries": false,
+    "triggers": {},
     "hostedUI": false,
     "verificationBucketName": "funolympics5e6d275fverificationbucket",
     "parentStack": {
       "Ref": "AWS::StackId"
     },
-    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"CustomMessage\",\n    \"lambdaFunctionName\": \"funolympics5e6d275fCustomMessage\"\n  }\n]",
     "permissions": [],
     "adminQueryGroup": "funguest",
     "authProviders": [],

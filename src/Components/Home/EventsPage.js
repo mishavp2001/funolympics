@@ -40,7 +40,11 @@ function EventsPage() {
     }
     const getEvents = async () => {
         try {
-            const eventsDataList = await API.graphql(graphqlOperation(listEvents));
+            const eventsDataList = await API.graphql(
+                {query:listEvents,
+                authMode: 'AWS_IAM'
+                }
+            );
             console.log(eventsData);
             setEventsData(eventsDataList.data.listEvents.items);
 

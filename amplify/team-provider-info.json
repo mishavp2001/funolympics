@@ -18,13 +18,6 @@
         "userPoolGroups": {}
       },
       "function": {
-        "funolympics5e6d275fCustomMessage": {
-          "REDIRECTURL": "/index.html",
-          "EMAILSUBJECT": "",
-          "EMAILMESSAGE": "",
-          "deploymentBucketName": "amplify-funolympics-dev-184325-deployment",
-          "s3Key": "amplify-builds/funolympics5e6d275fCustomMessage-614c517969536e576457-build.zip"
-        },
         "AdminQueries371c5747": {
           "deploymentBucketName": "amplify-funolympics-dev-184325-deployment",
           "s3Key": "amplify-builds/AdminQueries371c5747-6a4138545a647641625a-build.zip"

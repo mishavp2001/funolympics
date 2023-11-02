@@ -54,17 +54,7 @@
   "auth": {
     "funolympics5e6d275f": {
       "customAuth": false,
-      "dependsOn": [
-        {
-          "attributes": [
-            "Arn",
-            "Name"
-          ],
-          "category": "function",
-          "resourceName": "funolympics5e6d275fCustomMessage",
-          "triggerProvider": "Cognito"
-        }
-      ],
+      "dependsOn": [],
       "frontendAuthConfig": {
         "mfaConfiguration": "OFF",
         "mfaTypes": [
@@ -119,11 +109,6 @@
       ],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
-    },
-    "funolympics5e6d275fCustomMessage": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
     }
   },
   "parameters": {
@@ -140,46 +125,6 @@
         {
           "category": "function",
           "resourceName": "AdminQueries371c5747"
-        }
-      ]
-    },
-    "AMPLIFY_function_funolympics5e6d275fCustomMessage_EMAILMESSAGE": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "funolympics5e6d275fCustomMessage"
-        }
-      ]
-    },
-    "AMPLIFY_function_funolympics5e6d275fCustomMessage_EMAILSUBJECT": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "funolympics5e6d275fCustomMessage"
-        }
-      ]
-    },
-    "AMPLIFY_function_funolympics5e6d275fCustomMessage_REDIRECTURL": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "funolympics5e6d275fCustomMessage"
-        }
-      ]
-    },
-    "AMPLIFY_function_funolympics5e6d275fCustomMessage_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "funolympics5e6d275fCustomMessage"
-        }
-      ]
-    },
-    "AMPLIFY_function_funolympics5e6d275fCustomMessage_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "funolympics5e6d275fCustomMessage"
         }
       ]
     }
