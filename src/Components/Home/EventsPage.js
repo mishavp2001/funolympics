@@ -6,9 +6,9 @@ import { createEvent } from "../../graphql/mutations";
 import { listEvents } from "../../graphql/queries";
 import { Divider } from '@aws-amplify/ui-react';
 import { useAuthenticator } from '@aws-amplify/ui-react';
-import {
-    EventCreateForm 
-   } from '../../ui-components';
+// import {
+//     EventCreateForm 
+//    } from '../../ui-components';
 
     
 function EventsPage() {
@@ -76,7 +76,7 @@ function EventsPage() {
                 </Col>
                 {AuthContext.authStatus === 'authenticated' && 
                                 <Col sm={4}className='small-form'>
-                                    <EventCreateForm />
+                                    {/* <EventCreateForm /> */}
                                 <h4>Add Public Event</h4>
                                 <Form>
                                     <fieldset>

@@ -50,14 +50,17 @@
 }
 
 .events-container {
-    background-color: rgb(10, 98, 156);
+    background-color:#0a629c;
     color: rgb(255, 255, 255);
 }
 
 .champions-container {
-    background-color: rgb(240, 195, 14);
-    color: rgb(2, 2, 109);
+    background-color:rgb(93, 160, 188);
+    color: rgb(255, 255, 255);
     font-weight: 600;
+    .amplify-field-group {
+        background-color: antiquewhite;
+    }
 }
 
 .generic-container, .login-container {
@@ -104,3 +107,4 @@
 .navbar-dark .navbar-nav .nav-link {
     color: rgb(8, 3, 75);
 }
+

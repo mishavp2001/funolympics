@@ -43,7 +43,7 @@ const ChampionsPage = () => {
                     })}
                 </Col>
                 {AuthContext.authStatus === 'authenticated' &&
-                    <Col sm={5}>
+                    <Col sm={5} className='small-form'>
                         <ChampionCreateForm />
                     </Col>
                 }
