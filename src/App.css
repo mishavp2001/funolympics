@@ -52,6 +52,9 @@
 .events-container {
     background-color:#0a629c;
     color: rgb(255, 255, 255);
+    .amplify-field-group {
+        background-color: antiquewhite;
+    }
 }
 
 .champions-container {
@@ -68,7 +71,7 @@
     color: rgb(8, 3, 75);
 }
 .events-container > div, .champions-container > div, .generic-container > div {
-    padding: 3em;
+    padding: 1em;
 }
 
 .home-container .login-container {

@@ -4,10 +4,9 @@ import { schema } from './schema';
 
 
 
-const { Champion, Event, Attendence } = initSchema(schema);
+const { Champion, Event } = initSchema(schema);
 
 export {
   Champion,
-  Event,
-  Attendence
+  Event
 };

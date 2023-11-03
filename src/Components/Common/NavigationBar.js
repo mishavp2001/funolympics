@@ -44,7 +44,8 @@ const NavigationBar = props => {
                     <Nav className="mr-auto">
                         <Nav.Link href='/events'>Events</Nav.Link>
                         <Nav.Link href="/champions">Champions</Nav.Link>
-                        <NavDropdown title="Products" id="basic-nav-dropdown">
+                        <Nav.Link href="/products">Products</Nav.Link>
+                        <NavDropdown title="More" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Soccer</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">
                                 Basketball

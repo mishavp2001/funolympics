@@ -15,15 +15,5 @@ type Event @model @auth(rules: [{allow: owner}, {allow: private, operations: [re
   summary: String!
   phone: String!
   email: String!
-  attendence: [Attendence] @hasMany(indexName: "byEvent", fields: ["id"])
-}
-
-type Attendence @model @auth(rules: [{allow: private}, {allow: public, operations: [read], provider: iam}]) {
-  id: ID!
-  attendence: Event @belongsTo
-  phone: String!
-  email: String!
-  paid: Boolean!
-  eventID: ID! @index(name: "byEvent")
 }
  

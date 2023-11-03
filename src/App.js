@@ -15,6 +15,7 @@ import {Login} from './Components/Auth/Login';
 import Register from './Components/Auth/Register';
 import ChampionsPage from './Components/Home/ChampionsPage';
 import Profile from './Components/Home/Profile';
+import Products from './Components/Home/Products';
 
 import { Route, Routes } from 'react-router-dom';
 import { Row, Col, Container, Image, Button, Nav } from 'react-bootstrap';
@@ -74,6 +75,7 @@ function App() {
                         <Route index path='/' exact={true} element = {<HomePage/>} />
                         <Route path='/login' element = {<Login/>} />
                         <Route path='/profile' element = {<Profile />} />
+                        <Route path='/products' element = {<Products />} />
                         <Route path='/soccer' element = {<SoccerPage/>} />
                         <Route path='/basketball' element = {<BasketballPage/>} />
                         <Route path='/volleyball' element = {<VolleyballPage/>} />
