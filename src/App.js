@@ -16,6 +16,7 @@ import Register from './Components/Auth/Register';
 import ChampionsPage from './Components/Home/ChampionsPage';
 import Profile from './Components/Home/Profile';
 import Products from './Components/Home/Products';
+import Privacy from './Components/Home/Privacy';
 
 import { Route, Routes } from 'react-router-dom';
 import { Row, Col, Container, Image, Button, Nav } from 'react-bootstrap';
@@ -79,6 +80,7 @@ function App() {
                         <Route path='/login' element = {<Login/>} />
                         <Route path='/profile' element = {<Profile />} />
                         <Route path='/products' element = {<Products />} />
+                        <Route path='/privacy' element = {<Privacy />} />
                         <Route path='/soccer' element = {<SoccerPage/>} />
                         <Route path='/basketball' element = {<BasketballPage/>} />
                         <Route path='/volleyball' element = {<VolleyballPage/>} />

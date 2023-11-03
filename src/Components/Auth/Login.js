@@ -15,7 +15,7 @@ export function Login() {
   }, [route, navigate, from]);
   return (
     <View className="auth-wrapper">
-      <Authenticator  loginMechanisms={['email']} socialProviders={['amazon', 'apple', 'facebook', 'google']}></Authenticator>
+      <Authenticator  loginMechanisms={['email']} socialProviders={['facebook', 'google']}></Authenticator>
     </View>
   );
 }
