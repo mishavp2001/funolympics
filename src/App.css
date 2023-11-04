@@ -34,12 +34,12 @@
     padding: 4em;
 }
 
-.navbar-dark .navbar-nav .nav-link {
-    color: white!important; 
+.navbar-dark .navbar-nav {
+    .nav-link {
+        color: white!important; 
+    }
 }
-.navbar-dark .navbar-nav .show > .nav-link {
-    color: white;
-}
+
 .events-header {
     margin-right: 1em;
     padding: 1em;
@@ -84,8 +84,8 @@
     margin-bottom: 3em;
 }
 
-.navbar-dark.bg-info {
-    background-color: rgb(236, 145, 17)!important;
+.navbar.navbar-dark.bg-info {
+    background-color: rgb(236, 145, 17) !important;
     font-weight:800;
     height: 6em;
 
@@ -99,6 +99,10 @@
          background-color: rgb(255 146 72)!important;
          color: rgb(2, 60, 175)!important;
     }
+     .navbar-collapse.show {
+        padding: 1em;
+        background-color:  rgb(236, 145, 17) !important;
+    }  
 }
 
 .dropdown-menu.show, .login-nav {

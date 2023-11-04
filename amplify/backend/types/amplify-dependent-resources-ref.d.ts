@@ -32,5 +32,11 @@ export type AmplifyDependentResourcesAttributes = {
       "Name": "string",
       "Region": "string"
     }
+  },
+  "storage": {
+    "funstorage": {
+      "BucketName": "string",
+      "Region": "string"
+    }
   }
 }

@@ -1,0 +1,16 @@
+{
+  "resourceName": "funstorage",
+  "policyUUID": "9aadd647",
+  "bucketName": "funolympicse0ffa61b199e42ef8e991c0c61c9b0cc",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "CREATE_AND_UPDATE",
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE"
+}

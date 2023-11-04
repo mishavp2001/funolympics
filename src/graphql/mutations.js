@@ -1,6 +1,72 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const createGame = /* GraphQL */ `
+  mutation CreateGame(
+    $input: CreateGameInput!
+    $condition: ModelGameConditionInput
+  ) {
+    createGame(input: $input, condition: $condition) {
+      id
+      summary
+      tags
+      rules
+      examples
+      likes
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const updateGame = /* GraphQL */ `
+  mutation UpdateGame(
+    $input: UpdateGameInput!
+    $condition: ModelGameConditionInput
+  ) {
+    updateGame(input: $input, condition: $condition) {
+      id
+      summary
+      tags
+      rules
+      examples
+      likes
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const deleteGame = /* GraphQL */ `
+  mutation DeleteGame(
+    $input: DeleteGameInput!
+    $condition: ModelGameConditionInput
+  ) {
+    deleteGame(input: $input, condition: $condition) {
+      id
+      summary
+      tags
+      rules
+      examples
+      likes
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
+  }
+`;
 export const createChampion = /* GraphQL */ `
   mutation CreateChampion(
     $input: CreateChampionInput!
@@ -82,11 +148,6 @@ export const createEvent = /* GraphQL */ `
       summary
       phone
       email
-      attendence {
-        nextToken
-        startedAt
-        __typename
-      }
       createdAt
       updatedAt
       _version
@@ -109,11 +170,6 @@ export const updateEvent = /* GraphQL */ `
       summary
       phone
       email
-      attendence {
-        nextToken
-        startedAt
-        __typename
-      }
       createdAt
       updatedAt
       _version
@@ -136,122 +192,12 @@ export const deleteEvent = /* GraphQL */ `
       summary
       phone
       email
-      attendence {
-        nextToken
-        startedAt
-        __typename
-      }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
       owner
-      __typename
-    }
-  }
-`;
-export const createAttendence = /* GraphQL */ `
-  mutation CreateAttendence(
-    $input: CreateAttendenceInput!
-    $condition: ModelAttendenceConditionInput
-  ) {
-    createAttendence(input: $input, condition: $condition) {
-      id
-      attendence {
-        id
-        zip
-        theme
-        summary
-        phone
-        email
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        owner
-        __typename
-      }
-      phone
-      email
-      paid
-      eventID
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      __typename
-    }
-  }
-`;
-export const updateAttendence = /* GraphQL */ `
-  mutation UpdateAttendence(
-    $input: UpdateAttendenceInput!
-    $condition: ModelAttendenceConditionInput
-  ) {
-    updateAttendence(input: $input, condition: $condition) {
-      id
-      attendence {
-        id
-        zip
-        theme
-        summary
-        phone
-        email
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        owner
-        __typename
-      }
-      phone
-      email
-      paid
-      eventID
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      __typename
-    }
-  }
-`;
-export const deleteAttendence = /* GraphQL */ `
-  mutation DeleteAttendence(
-    $input: DeleteAttendenceInput!
-    $condition: ModelAttendenceConditionInput
-  ) {
-    deleteAttendence(input: $input, condition: $condition) {
-      id
-      attendence {
-        id
-        zip
-        theme
-        summary
-        phone
-        email
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        owner
-        __typename
-      }
-      phone
-      email
-      paid
-      eventID
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }

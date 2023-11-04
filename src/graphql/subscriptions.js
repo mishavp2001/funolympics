@@ -1,6 +1,72 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreateGame = /* GraphQL */ `
+  subscription OnCreateGame(
+    $filter: ModelSubscriptionGameFilterInput
+    $owner: String
+  ) {
+    onCreateGame(filter: $filter, owner: $owner) {
+      id
+      summary
+      tags
+      rules
+      examples
+      likes
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const onUpdateGame = /* GraphQL */ `
+  subscription OnUpdateGame(
+    $filter: ModelSubscriptionGameFilterInput
+    $owner: String
+  ) {
+    onUpdateGame(filter: $filter, owner: $owner) {
+      id
+      summary
+      tags
+      rules
+      examples
+      likes
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const onDeleteGame = /* GraphQL */ `
+  subscription OnDeleteGame(
+    $filter: ModelSubscriptionGameFilterInput
+    $owner: String
+  ) {
+    onDeleteGame(filter: $filter, owner: $owner) {
+      id
+      summary
+      tags
+      rules
+      examples
+      likes
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
+  }
+`;
 export const onCreateChampion = /* GraphQL */ `
   subscription OnCreateChampion(
     $filter: ModelSubscriptionChampionFilterInput
@@ -82,11 +148,6 @@ export const onCreateEvent = /* GraphQL */ `
       summary
       phone
       email
-      attendence {
-        nextToken
-        startedAt
-        __typename
-      }
       createdAt
       updatedAt
       _version
@@ -109,11 +170,6 @@ export const onUpdateEvent = /* GraphQL */ `
       summary
       phone
       email
-      attendence {
-        nextToken
-        startedAt
-        __typename
-      }
       createdAt
       updatedAt
       _version
@@ -136,119 +192,12 @@ export const onDeleteEvent = /* GraphQL */ `
       summary
       phone
       email
-      attendence {
-        nextToken
-        startedAt
-        __typename
-      }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
       owner
-      __typename
-    }
-  }
-`;
-export const onCreateAttendence = /* GraphQL */ `
-  subscription OnCreateAttendence(
-    $filter: ModelSubscriptionAttendenceFilterInput
-  ) {
-    onCreateAttendence(filter: $filter) {
-      id
-      attendence {
-        id
-        zip
-        theme
-        summary
-        phone
-        email
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        owner
-        __typename
-      }
-      phone
-      email
-      paid
-      eventID
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      __typename
-    }
-  }
-`;
-export const onUpdateAttendence = /* GraphQL */ `
-  subscription OnUpdateAttendence(
-    $filter: ModelSubscriptionAttendenceFilterInput
-  ) {
-    onUpdateAttendence(filter: $filter) {
-      id
-      attendence {
-        id
-        zip
-        theme
-        summary
-        phone
-        email
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        owner
-        __typename
-      }
-      phone
-      email
-      paid
-      eventID
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      __typename
-    }
-  }
-`;
-export const onDeleteAttendence = /* GraphQL */ `
-  subscription OnDeleteAttendence(
-    $filter: ModelSubscriptionAttendenceFilterInput
-  ) {
-    onDeleteAttendence(filter: $filter) {
-      id
-      attendence {
-        id
-        zip
-        theme
-        summary
-        phone
-        email
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        owner
-        __typename
-      }
-      phone
-      email
-      paid
-      eventID
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }

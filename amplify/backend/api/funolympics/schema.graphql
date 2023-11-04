@@ -6,7 +6,7 @@ enum Sports {
   RUNNING
 }
 
-type Game @model @auth(rules: [{allow: private}, {allow: groups, groups: ["olympicsguestpool"], operations: [read]}]) {
+type Game @model @auth(rules: [{allow: private, operations: [read]}, {allow: groups, groups: ["olympicsguestpool"], operations: [read]}, {allow: public, operations: [read], provider: iam}, {allow: owner}]) {
   id: ID!
   summary: String
   tags: [Sports!]!

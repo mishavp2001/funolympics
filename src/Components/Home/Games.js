@@ -31,8 +31,8 @@ const Games = () => {
                 <Col>
                     <Row>
                         <Col  sm={5}>Game</Col>
-                        <Col  sm={4}>Summary</Col>
-                        <Col  sm={3}>Rules</Col>
+                        <Col  sm={2}>Tags</Col>
+                        <Col  sm={5}>Rules</Col>
                     </Row>
                     <Row className='events-header'>
                         <Divider />
@@ -40,8 +40,15 @@ const Games = () => {
                     <Col>
                     {gamesData.map((game, ind) => {
                         return (<Row className="events-data" key={ind}>
-                            <Col>{game.summary}</Col>
+                            <Col  sm={5}>{game.summary}</Col>
                             <Col sm={2}>
+                                {game.tags.map((tag, idx) => {
+                                    return(
+                                       <p key={idx}>{tag}</p>  
+                                    )
+                                })}
+                            </Col>
+                            <Col  sm={5}>
                                 {game.rules.map((rule, idx) => {
                                     return(
                                        <p key={idx}>{rule}</p>  

@@ -26,6 +26,9 @@
       "api": {
         "funolympics": {},
         "AdminQueries": {}
+      },
+      "storage": {
+        "funstorage": {}
       }
     }
   }
