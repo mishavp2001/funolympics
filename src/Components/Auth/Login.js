@@ -13,9 +13,10 @@ export function Login() {
       navigate(from, { replace: true });
     }
   }, [route, navigate, from]);
-  return (
+  return ( 
+    //TODO: socialProviders={['facebook', 'google']} to pass into Authenticator when integrated
     <View className="auth-wrapper">
-      <Authenticator  loginMechanisms={['email']} socialProviders={['facebook', 'google']}></Authenticator>
+      <Authenticator  loginMechanisms={['email']} socialProviders={[]}></Authenticator>
     </View>
   );
 }

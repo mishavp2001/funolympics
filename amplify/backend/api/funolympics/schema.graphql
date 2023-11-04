@@ -1,3 +1,20 @@
+enum Sports {
+  SOCCER
+  BASKETBALL
+  VOLLEYBALL
+  FOOTBALL
+  RUNNING
+}
+
+type Game @model @auth(rules: [{allow: private}, {allow: groups, groups: ["olympicsguestpool"], operations: [read]}]) {
+  id: ID!
+  summary: String
+  tags: [Sports!]!
+  rules: [String!]!
+  examples: [String]
+  likes: Int
+}
+
 type Champion @model @auth(rules: [{allow: private, operations: [read]}, {allow: owner}, {allow: public, operations: [read], provider: iam}]) {
   id: ID!
   name: String!

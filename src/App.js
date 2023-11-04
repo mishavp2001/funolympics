@@ -15,7 +15,7 @@ import {Login} from './Components/Auth/Login';
 import Register from './Components/Auth/Register';
 import ChampionsPage from './Components/Home/ChampionsPage';
 import Profile from './Components/Home/Profile';
-import Products from './Components/Home/Products';
+import Games from './Components/Home/Games';
 import Privacy from './Components/Home/Privacy';
 
 import { Route, Routes } from 'react-router-dom';
@@ -79,7 +79,7 @@ function App() {
                         <Route index path='/' exact={true} element = {<HomePage/>} />
                         <Route path='/login' element = {<Login/>} />
                         <Route path='/profile' element = {<Profile />} />
-                        <Route path='/products' element = {<Products />} />
+                        <Route path='/games' element = {<Games />} />
                         <Route path='/privacy' element = {<Privacy />} />
                         <Route path='/soccer' element = {<SoccerPage/>} />
                         <Route path='/basketball' element = {<BasketballPage/>} />

@@ -90,7 +90,9 @@
     height: 6em;
 
     .navbar-brand {
-        font-size: 3em;
+        font-size: 4em;
+        font-family: 'math';
+        font-weight: 600;
     }
 
     .dropdown-menu {

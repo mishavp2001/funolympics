@@ -2,11 +2,19 @@
 import { initSchema } from '@aws-amplify/datastore';
 import { schema } from './schema';
 
+const Sports = {
+  "SOCCER": "SOCCER",
+  "BASKETBALL": "BASKETBALL",
+  "VOLLEYBALL": "VOLLEYBALL",
+  "FOOTBALL": "FOOTBALL",
+  "RUNNING": "RUNNING"
+};
 
-
-const { Champion, Event } = initSchema(schema);
+const { Game, Champion, Event } = initSchema(schema);
 
 export {
+  Game,
   Champion,
-  Event
+  Event,
+  Sports
 };

@@ -2,7 +2,7 @@
   "version": "1",
   "cognitoConfig": {
     "identityPoolName": "funolympics5e6d275f_identitypool_5e6d275f",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "funoly5e6d275f",
     "userPoolName": "funolympics5e6d275f_userpool_5e6d275f",
     "autoVerifiedAttributes": [
@@ -16,7 +16,7 @@
     "smsVerificationMessage": "Your verification code is {####}",
     "emailVerificationSubject": "Your verification code",
     "emailVerificationMessage": "Your verification code is {####}",
-    "defaultPasswordPolicy": false,
+    "defaultPasswordPolicy": true,
     "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [],
     "requiredAttributes": [
@@ -47,7 +47,7 @@
     "sharedId": "5e6d275f",
     "resourceName": "funolympics5e6d275f",
     "authSelections": "identityPoolAndUserPool",
-    "useDefault": "defaultSocial",
+    "useDefault": "manual",
     "usernameAttributes": [
       "email"
     ],
@@ -74,19 +74,14 @@
     "userPoolGroups": false,
     "adminQueries": false,
     "triggers": {},
-    "hostedUI": true,
+    "hostedUI": false,
     "verificationBucketName": "funolympics5e6d275fverificationbucket",
     "parentStack": {
       "Ref": "AWS::StackId"
     },
     "permissions": [],
     "adminQueryGroup": "funguest",
-    "hostedUIDomainName": "funolympics84b90c9b-84b90c9b",
-    "authProvidersUserPool": [
-      "Facebook"
-    ],
-    "hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"id\"}}]",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\",\"https://main.d1rtw7mvdh8nfk.amplifyapp.com/\"],\"LogoutURLs\":[\"https://main.d1rtw7mvdh8nfk.amplifyapp.com/\"]}",
-    "authProviders": []
+    "authProviders": [],
+    "thirdPartyAuth": false
   }
 }

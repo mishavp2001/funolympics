@@ -67,9 +67,7 @@
         "signupAttributes": [
           "EMAIL"
         ],
-        "socialProviders": [
-          "FACEBOOK"
-        ],
+        "socialProviders": [],
         "usernameAttributes": [
           "EMAIL"
         ],

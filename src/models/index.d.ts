@@ -2,9 +2,51 @@ import { ModelInit, MutableModel, __modelMeta__, ManagedIdentifier } from "@aws-
 // @ts-ignore
 import { LazyLoading, LazyLoadingDisabled } from "@aws-amplify/datastore";
 
+export enum Sports {
+  SOCCER = "SOCCER",
+  BASKETBALL = "BASKETBALL",
+  VOLLEYBALL = "VOLLEYBALL",
+  FOOTBALL = "FOOTBALL",
+  RUNNING = "RUNNING"
+}
 
 
 
+type EagerGame = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Game, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly summary?: string | null;
+  readonly tags: Sports[] | Array<keyof typeof Sports>;
+  readonly rules: string[];
+  readonly examples?: (string | null)[] | null;
+  readonly likes?: number | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazyGame = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Game, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly summary?: string | null;
+  readonly tags: Sports[] | Array<keyof typeof Sports>;
+  readonly rules: string[];
+  readonly examples?: (string | null)[] | null;
+  readonly likes?: number | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type Game = LazyLoading extends LazyLoadingDisabled ? EagerGame : LazyGame
+
+export declare const Game: (new (init: ModelInit<Game>) => Game) & {
+  copyOf(source: Game, mutator: (draft: MutableModel<Game>) => MutableModel<Game> | void): Game;
+}
 
 type EagerChampion = {
   readonly [__modelMeta__]: {

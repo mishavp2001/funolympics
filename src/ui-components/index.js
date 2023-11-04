@@ -8,4 +8,6 @@ export { default as ChampionCreateForm } from "./ChampionCreateForm";
 export { default as ChampionUpdateForm } from "./ChampionUpdateForm";
 export { default as EventCreateForm } from "./EventCreateForm";
 export { default as EventUpdateForm } from "./EventUpdateForm";
+export { default as GameCreateForm } from "./GameCreateForm";
+export { default as GameUpdateForm } from "./GameUpdateForm";
 export { default as studioTheme } from "./studioTheme";

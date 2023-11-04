@@ -27,35 +27,14 @@ const NavigationBar = props => {
         <header>
             <Navbar variant="dark" expand="lg" bg='info' fixed='top'>
                 <Navbar.Brand href="/">
-                <span style={{"color":"#FF0000"}}>F</span>
-                <span style={{"color":"rgb(137 16 119)"}}>u</span>
-                <span style={{"color":"rgb(95 128 216)"}}>n</span>
-                <span style={{"color":"rgb(14 56 147)"}}>O</span>
-                <span style={{"color":"rgb(1 44 48)"}}>l</span>
-                <span style={{"color":"rgb(36 92 121)"}}>y</span>
-                <span style={{"color":"rgb(219 20 98)"}}>m</span>
-                <span style={{"color":"#66CC66"}}>p</span>
-                <span style={{"color":"rgb(148 10 157)"}}>i</span>
-                <span style={{"color":"rgb(22 119 22)"}}>c</span>
-                <span style={{"color":"#FF0000"}}>s</span> 
+                <span style={{color: 'lightblue'}}>F</span><span style={{color: 'yellow'}}>u</span><span style={{color: '#a289eb'}}>n</span><span style={{color: 'lightgreen'}}>O</span><span style={{color: 'red'}}>l</span><span style={{color: 'lightseagreen'}}>y</span><span style={{color: 'rgb(219, 20, 98)'}}>m</span><span style={{color: 'rgb(102, 204, 102)'}}>p</span><span style={{color: 'rgb(148, 10, 157)'}}>i</span><span style={{color: 'rgb(22, 119, 22)'}}>c</span><span style={{color: 'rgb(255, 0, 0)'}}>s</span>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
                         <Nav.Link href='/events'>Events</Nav.Link>
+                        <Nav.Link href="/games">Games</Nav.Link>
                         <Nav.Link href="/champions">Champions</Nav.Link>
-                        <Nav.Link href="/products">Products</Nav.Link>
-                        <NavDropdown title="More" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Soccer</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">
-                                Basketball
-                            </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Voleyball</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href='/sell'>
-                                Sell Your Products
-                            </NavDropdown.Item>
-                        </NavDropdown>
                     </Nav>
 
                     <Form className='d-flex'>
