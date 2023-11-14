@@ -165,10 +165,12 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "img": {
-                    "name": "img",
+                "imgS3": {
+                    "name": "imgS3",
                     "isArray": false,
-                    "type": "String",
+                    "type": {
+                        "nonModel": "S3Object"
+                    },
                     "isRequired": false,
                     "attributes": []
                 },
@@ -346,7 +348,34 @@ export const schema = {
             ]
         }
     },
-    "nonModels": {},
+    "nonModels": {
+        "S3Object": {
+            "name": "S3Object",
+            "fields": {
+                "bucket": {
+                    "name": "bucket",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "region": {
+                    "name": "region",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "key": {
+                    "name": "key",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                }
+            }
+        }
+    },
     "codegenVersion": "3.4.4",
-    "version": "e02ac24be7ff052948e0178bc5ac26c3"
+    "version": "ef76e83f99e3a1584941f9e2aa08b97a"
 };

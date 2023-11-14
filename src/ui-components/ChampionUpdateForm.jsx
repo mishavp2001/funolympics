@@ -194,14 +194,12 @@ export default function ChampionUpdateForm(props) {
     records: [],
     phone: "",
     summary: "",
-    img: "",
   };
   const [name, setName] = React.useState(initialValues.name);
   const [address, setAddress] = React.useState(initialValues.address);
   const [records, setRecords] = React.useState(initialValues.records);
   const [phone, setPhone] = React.useState(initialValues.phone);
   const [summary, setSummary] = React.useState(initialValues.summary);
-  const [img, setImg] = React.useState(initialValues.img);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = championRecord
@@ -213,7 +211,6 @@ export default function ChampionUpdateForm(props) {
     setCurrentRecordsValue("");
     setPhone(cleanValues.phone);
     setSummary(cleanValues.summary);
-    setImg(cleanValues.img);
     setErrors({});
   };
   const [championRecord, setChampionRecord] = React.useState(championModelProp);
@@ -235,7 +232,6 @@ export default function ChampionUpdateForm(props) {
     records: [],
     phone: [{ type: "Phone" }],
     summary: [],
-    img: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -268,7 +264,6 @@ export default function ChampionUpdateForm(props) {
           records,
           phone,
           summary,
-          img,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -329,7 +324,6 @@ export default function ChampionUpdateForm(props) {
               records,
               phone,
               summary,
-              img,
             };
             const result = onChange(modelFields);
             value = result?.name ?? value;
@@ -358,7 +352,6 @@ export default function ChampionUpdateForm(props) {
               records,
               phone,
               summary,
-              img,
             };
             const result = onChange(modelFields);
             value = result?.address ?? value;
@@ -383,7 +376,6 @@ export default function ChampionUpdateForm(props) {
               records: values,
               phone,
               summary,
-              img,
             };
             const result = onChange(modelFields);
             values = result?.records ?? values;
@@ -438,7 +430,6 @@ export default function ChampionUpdateForm(props) {
               records,
               phone: value,
               summary,
-              img,
             };
             const result = onChange(modelFields);
             value = result?.phone ?? value;
@@ -467,7 +458,6 @@ export default function ChampionUpdateForm(props) {
               records,
               phone,
               summary: value,
-              img,
             };
             const result = onChange(modelFields);
             value = result?.summary ?? value;
@@ -481,35 +471,6 @@ export default function ChampionUpdateForm(props) {
         errorMessage={errors.summary?.errorMessage}
         hasError={errors.summary?.hasError}
         {...getOverrideProps(overrides, "summary")}
-      ></TextField>
-      <TextField
-        label="Img"
-        isRequired={false}
-        isReadOnly={false}
-        value={img}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              name,
-              address,
-              records,
-              phone,
-              summary,
-              img: value,
-            };
-            const result = onChange(modelFields);
-            value = result?.img ?? value;
-          }
-          if (errors.img?.hasError) {
-            runValidationTasks("img", value);
-          }
-          setImg(value);
-        }}
-        onBlur={() => runValidationTasks("img", img)}
-        errorMessage={errors.img?.errorMessage}
-        hasError={errors.img?.hasError}
-        {...getOverrideProps(overrides, "img")}
       ></TextField>
       <Flex
         justifyContent="space-between"

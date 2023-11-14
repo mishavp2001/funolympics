@@ -3,6 +3,18 @@
     padding: 5em;
 }
 
+.navbar-dark .navbar-brand.brand {
+    background: linear-gradient(to left,
+    rgb(222, 10, 105),
+    #db3705,
+    rgb(246, 242, 1),
+    rgb(252, 245, 42),
+    rgb(125, 11, 76),
+    rgb(213, 21, 213),
+    rgb(192, 7, 44));
+-webkit-background-clip: text;
+color: transparent;}
+
 .app-footer {
     background-color: rgb(20, 161, 226);
     padding: 1em;
@@ -85,9 +97,9 @@
 }
 
 .navbar.navbar-dark.bg-info {
-    background-color: rgb(236, 145, 17) !important;
+    background-color: rgb(12, 192, 126) !important;
     font-weight:800;
-    height: 6em;
+    height: 7em;
 
     .navbar-brand {
         font-size: 4em;
@@ -113,7 +125,12 @@
     color: rgb(3, 19, 68);
 }
 
-.navbar-dark .navbar-nav .nav-link {
-    color: rgb(8, 3, 75);
+.navbar .navbar-nav .nav-link {
+    color: rgb(19, 9, 152);
+    font-size: 1.2em;
+    background-color: #057ea6;
+    margin: 0.5em;
+    padding: 5px;
+    border-radius: 20px;
 }
 

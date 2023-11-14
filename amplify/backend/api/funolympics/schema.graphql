@@ -6,6 +6,12 @@ enum Sports {
   RUNNING
 }
 
+type S3Object {
+  bucket: String!
+  region: String!
+  key: String!
+}
+
 type Game @model @auth(rules: [{allow: private, operations: [read]}, {allow: groups, groups: ["olympicsguestpool"], operations: [read]}, {allow: public, operations: [read], provider: iam}, {allow: owner}]) {
   id: ID!
   summary: String
@@ -22,7 +28,7 @@ type Champion @model @auth(rules: [{allow: private, operations: [read]}, {allow:
   records: [String]
   phone: AWSPhone
   summary: String
-  img: String
+  imgS3: S3Object
 }
 
 type Event @model @auth(rules: [{allow: owner}, {allow: private, operations: [read]}, {allow: public, operations: [read], provider: iam}]) {

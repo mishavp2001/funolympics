@@ -10,7 +10,21 @@ export enum Sports {
   RUNNING = "RUNNING"
 }
 
+type EagerS3Object = {
+  readonly bucket: string;
+  readonly region: string;
+  readonly key: string;
+}
 
+type LazyS3Object = {
+  readonly bucket: string;
+  readonly region: string;
+  readonly key: string;
+}
+
+export declare type S3Object = LazyLoading extends LazyLoadingDisabled ? EagerS3Object : LazyS3Object
+
+export declare const S3Object: (new (init: ModelInit<S3Object>) => S3Object)
 
 type EagerGame = {
   readonly [__modelMeta__]: {
@@ -59,7 +73,7 @@ type EagerChampion = {
   readonly records?: (string | null)[] | null;
   readonly phone?: string | null;
   readonly summary?: string | null;
-  readonly img?: string | null;
+  readonly imgS3?: S3Object | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -75,7 +89,7 @@ type LazyChampion = {
   readonly records?: (string | null)[] | null;
   readonly phone?: string | null;
   readonly summary?: string | null;
-  readonly img?: string | null;
+  readonly imgS3?: S3Object | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }

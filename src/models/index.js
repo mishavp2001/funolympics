@@ -10,11 +10,12 @@ const Sports = {
   "RUNNING": "RUNNING"
 };
 
-const { Game, Champion, Event } = initSchema(schema);
+const { Game, Champion, Event, S3Object } = initSchema(schema);
 
 export {
   Game,
   Champion,
   Event,
-  Sports
+  Sports,
+  S3Object
 };

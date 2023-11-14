@@ -91,7 +91,12 @@ export const getChampion = /* GraphQL */ `
       records
       phone
       summary
-      img
+      img {
+        bucket
+        region
+        key
+        __typename
+      }
       createdAt
       updatedAt
       _version
@@ -116,7 +121,6 @@ export const listChampions = /* GraphQL */ `
         records
         phone
         summary
-        img
         createdAt
         updatedAt
         _version
@@ -151,7 +155,6 @@ export const syncChampions = /* GraphQL */ `
         records
         phone
         summary
-        img
         createdAt
         updatedAt
         _version

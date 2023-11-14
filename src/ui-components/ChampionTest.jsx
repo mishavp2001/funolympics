@@ -176,7 +176,7 @@ function ArrayField({
     </React.Fragment>
   );
 }
-export default function ChampionCreateForm(props) {
+export default function ChampionTest(props) {
   const {
     clearOnSuccess = true,
     onSuccess,
@@ -291,7 +291,7 @@ export default function ChampionCreateForm(props) {
           }
         }
       }}
-      {...getOverrideProps(overrides, "ChampionCreateForm")}
+      {...getOverrideProps(overrides, "ChampionTest")}
       {...rest}
     >
       <TextField

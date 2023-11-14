@@ -28,7 +28,6 @@ export declare type ChampionUpdateFormInputValues = {
     records?: string[];
     phone?: string;
     summary?: string;
-    img?: string;
 };
 export declare type ChampionUpdateFormValidationValues = {
     name?: ValidationFunction<string>;
@@ -36,7 +35,6 @@ export declare type ChampionUpdateFormValidationValues = {
     records?: ValidationFunction<string>;
     phone?: ValidationFunction<string>;
     summary?: ValidationFunction<string>;
-    img?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type ChampionUpdateFormOverridesProps = {
@@ -46,7 +44,6 @@ export declare type ChampionUpdateFormOverridesProps = {
     records?: PrimitiveOverrideProps<TextFieldProps>;
     phone?: PrimitiveOverrideProps<TextFieldProps>;
     summary?: PrimitiveOverrideProps<TextFieldProps>;
-    img?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type ChampionUpdateFormProps = React.PropsWithChildren<{
     overrides?: ChampionUpdateFormOverridesProps | undefined | null;

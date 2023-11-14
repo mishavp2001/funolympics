@@ -21,14 +21,14 @@ export declare type ValidationResponse = {
     errorMessage?: string;
 };
 export declare type ValidationFunction<T> = (value: T, validationResponse: ValidationResponse) => ValidationResponse | Promise<ValidationResponse>;
-export declare type ChampionCreateFormInputValues = {
+export declare type ChampionFormInputValues = {
     name?: string;
     address?: string;
     records?: string[];
     phone?: string;
     summary?: string;
 };
-export declare type ChampionCreateFormValidationValues = {
+export declare type ChampionFormValidationValues = {
     name?: ValidationFunction<string>;
     address?: ValidationFunction<string>;
     records?: ValidationFunction<string>;
@@ -36,22 +36,22 @@ export declare type ChampionCreateFormValidationValues = {
     summary?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
-export declare type ChampionCreateFormOverridesProps = {
-    ChampionCreateFormGrid?: PrimitiveOverrideProps<GridProps>;
+export declare type ChampionFormOverridesProps = {
+    ChampionFormGrid?: PrimitiveOverrideProps<GridProps>;
     name?: PrimitiveOverrideProps<TextFieldProps>;
     address?: PrimitiveOverrideProps<TextFieldProps>;
     records?: PrimitiveOverrideProps<TextFieldProps>;
     phone?: PrimitiveOverrideProps<TextFieldProps>;
     summary?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
-export declare type ChampionCreateFormProps = React.PropsWithChildren<{
-    overrides?: ChampionCreateFormOverridesProps | undefined | null;
+export declare type ChampionFormProps = React.PropsWithChildren<{
+    overrides?: ChampionFormOverridesProps | undefined | null;
 } & {
     clearOnSuccess?: boolean;
-    onSubmit?: (fields: ChampionCreateFormInputValues) => ChampionCreateFormInputValues;
-    onSuccess?: (fields: ChampionCreateFormInputValues) => void;
-    onError?: (fields: ChampionCreateFormInputValues, errorMessage: string) => void;
-    onChange?: (fields: ChampionCreateFormInputValues) => ChampionCreateFormInputValues;
-    onValidate?: ChampionCreateFormValidationValues;
+    onSubmit?: (fields: ChampionFormInputValues) => ChampionFormInputValues;
+    onSuccess?: (fields: ChampionFormInputValues) => void;
+    onError?: (fields: ChampionFormInputValues, errorMessage: string) => void;
+    onChange?: (fields: ChampionFormInputValues) => ChampionFormInputValues;
+    onValidate?: ChampionFormValidationValues;
 } & React.CSSProperties>;
-export default function ChampionCreateForm(props: ChampionCreateFormProps): React.ReactElement;
+export default function ChampionForm(props: ChampionFormProps): React.ReactElement;

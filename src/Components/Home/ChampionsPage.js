@@ -1,30 +1,37 @@
 import React, { useEffect, useState } from 'react';
-import { API, graphqlOperation, DataStore } from 'aws-amplify';
+import { DataStore, Storage, API } from 'aws-amplify';
 
 import { Row, Col, Container, Image, Button, Nav } from 'react-bootstrap';
-import ChampionCreateForm from "../../ui-components/ChampionCreateForm"
+import ChampionCreateForm from "../../ui-components/ChampionCreateFormv2"
 import { Champion } from "../../models";
+import awsExports from "../../aws-exports";
 import { useAuthenticator } from '@aws-amplify/ui-react';
 import { Divider } from '@aws-amplify/ui-react';
+import { StorageImage } from '@aws-amplify/ui-react-storage';
+import StorageVideo from '../Common/StorageVideo';
 
 const ChampionsPage = () => {
-    const [championsData, setChampionstData] = useState([]);
+    const [championsData, setChampionstData] = useState({champs: [], videos: {}});
+
     const AuthContext = useAuthenticator((context) => [context]);
-    useEffect(() => {
+
+     useEffect(() =>  {
         getChampions();
+        console.log("Champions load")
     }, []
     )
+  
     const getChampions = async () => {
         try {
-            const championsDataList = await DataStore.query(Champion)
-            console.log(championsDataList);
-            setChampionstData(championsDataList);
-
+            const championsDataList = await DataStore.query(Champion)            
+            setChampionstData({
+                champs: championsDataList,
+                }
+            );
         } catch (error) {
             console.log(error);
         }
     };
-  
     return (
         <Container fluid className='px-5 py-5 champions-container'>
             <Row>
@@ -38,10 +45,19 @@ const ChampionsPage = () => {
                         <Divider />
                     </Row>
                     <Col>
-                    {championsData.map((champ, ind) => {
+
+                    {championsData.champs.map((champ, ind) => {
                         return (<Row className="events-data" key={ind}>
                             <Col >{champ.name} - {champ.address} - {champ.phone}</Col>
-                            <Col>{champ.summary}</Col>
+                            <Col>
+                                {champ.summary}
+                                {champ?.imgS3?.key  && champ.imgS3.key.match('jpg|png') && 
+                                    <StorageImage imgKey={champ?.imgS3?.key} />
+                                }
+                                {champ?.imgS3?.key && !champ.imgS3.key.match('jpg|png') &&
+                                    <StorageVideo videoKey={champ?.imgS3?.key} />
+                                }
+                            </Col>
                             <Col sm={2}>
                                 {champ.records.map((record, idx) => {
                                     return(
@@ -55,7 +71,13 @@ const ChampionsPage = () => {
                 </Col>
                 {AuthContext.authStatus === 'authenticated' &&
                     <Col sm={5} className='small-form'>
-                        <ChampionCreateForm onSuccess={getChampions}/>
+                        <ChampionCreateForm 
+                            overrides={{
+                                summary: {
+                                    descriptiveText: `Enter summary`
+                                  }
+                            }}
+                            onSuccess={(resp, id)=>{ getChampions();}}/>
                     </Col>
                 }
             </Row>

@@ -18,9 +18,13 @@ import {
   TextField,
   useTheme,
 } from "@aws-amplify/ui-react";
+import { StorageManager } from '@aws-amplify/ui-react-storage';
+
+
+import awsExports from "../aws-exports";
 import { Champion } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { DataStore } from "aws-amplify";
+import { DataStore, Storage } from 'aws-amplify';
 function ArrayField({
   items = [],
   onChange,
@@ -46,6 +50,7 @@ function ArrayField({
   } = useTheme();
   const [selectedBadgeIndex, setSelectedBadgeIndex] = React.useState();
   const [isEditing, setIsEditing] = React.useState();
+  
   React.useEffect(() => {
     if (isEditing) {
       inputFieldRef?.current?.focus();
@@ -177,6 +182,10 @@ function ArrayField({
   );
 }
 export default function ChampionCreateForm(props) {
+  const [imgS3, setImgS3] = React.useState('');
+  const onImgSuccess = ({ key }) => {
+    setImgS3(key);
+  };
   const {
     clearOnSuccess = true,
     onSuccess,
@@ -235,6 +244,49 @@ export default function ChampionCreateForm(props) {
     setErrors((errors) => ({ ...errors, [fieldName]: validationResponse }));
     return validationResponse;
   };
+  
+    const processFile = async ({ file }) => {
+      const fileExtension = file.name.split('.').pop();
+    
+      return file
+        .arrayBuffer()
+        .then((filebuffer) => window.crypto.subtle.digest('SHA-1', filebuffer))
+        .then((hashBuffer) => {
+          const hashArray = Array.from(new Uint8Array(hashBuffer));
+          const hashHex = hashArray
+            .map((a) => a.toString(16).padStart(2, '0'))
+            .join('');
+          return { file, key: `${hashHex}.${fileExtension}` };
+        });
+    };
+  const addImage = async (resp, id) => {
+      console.log(id);
+      try {
+          console.log(resp, id);
+          //Storage.put(
+          //    `${image.name.split('.')[0]}-${resp.name}.${image.name.split('.').pop()}`,
+          //    image)
+              //.then(async (storageRes) => {
+                  const original = await DataStore.query(Champion, id);
+
+                  await DataStore.save(
+                      Champion.copyOf(original, updated => {
+                        updated.imgS3 = {
+                          bucket: awsExports.aws_user_files_s3_bucket,
+                          region: awsExports.aws_user_files_s3_bucket_region,
+                          // bucket: 'funolympicse0ffa61b199e42ef8e991c0c61c9b0cc184325-dev',
+                          // region: 'us-west-1',
+                          key: imgS3
+                        };
+                      })
+                  )
+                   // );
+                  //})
+      } catch (error) {
+          console.log(error);
+      }
+  };
+
   return (
     <Grid
       as="form"
@@ -278,8 +330,12 @@ export default function ChampionCreateForm(props) {
               modelFields[key] = null;
             }
           });
-          await DataStore.save(new Champion(modelFields));
+
+          const Data = await DataStore.save(new Champion(modelFields));
+          
+          ///const Data = await DataStore.save(new Champion(modelFields));
           if (onSuccess) {
+            await addImage(modelFields, Data.id)
             onSuccess(modelFields);
           }
           if (clearOnSuccess) {
@@ -456,6 +512,23 @@ export default function ChampionCreateForm(props) {
         hasError={errors.summary?.hasError}
         {...getOverrideProps(overrides, "summary")}
       ></TextField>
+      {/* <input type="file" name="imgS3" accept="image/*" onChange={onImageChange} /> */}
+      
+      <>
+      <StorageManager
+        shouldAutoProceed={true}
+        onUploadSuccess={onImgSuccess}
+        maxFileCount={1}
+        maxSize={100000}
+        variation="drop"
+        acceptedFileTypes={['image/*', 'video/*']}
+        accessLevel="public"
+        showImages
+        processFile={processFile}
+      />
+      {imgS3}
+      </>
+      
       <Flex
         justifyContent="space-between"
         {...getOverrideProps(overrides, "CTAFlex")}
@@ -485,3 +558,5 @@ export default function ChampionCreateForm(props) {
     </Grid>
   );
 }
+
+

@@ -176,7 +176,7 @@ function ArrayField({
     </React.Fragment>
   );
 }
-export default function ChampionCreateForm(props) {
+export default function ChampionForm(props) {
   const {
     clearOnSuccess = true,
     onSuccess,
@@ -187,6 +187,7 @@ export default function ChampionCreateForm(props) {
     overrides,
     ...rest
   } = props;
+  const { tokens } = useTheme();
   const initialValues = {
     name: "",
     address: "",
@@ -239,7 +240,7 @@ export default function ChampionCreateForm(props) {
     <Grid
       as="form"
       rowGap="15px"
-      columnGap="15px"
+      columnGap={tokens.space.xxs.value}
       padding="20px"
       onSubmit={async (event) => {
         event.preventDefault();
@@ -291,7 +292,7 @@ export default function ChampionCreateForm(props) {
           }
         }
       }}
-      {...getOverrideProps(overrides, "ChampionCreateForm")}
+      {...getOverrideProps(overrides, "ChampionForm")}
       {...rest}
     >
       <TextField
@@ -470,7 +471,7 @@ export default function ChampionCreateForm(props) {
           {...getOverrideProps(overrides, "ClearButton")}
         ></Button>
         <Flex
-          gap="15px"
+          gap={tokens.space.xxs.value}
           {...getOverrideProps(overrides, "RightAlignCTASubFlex")}
         >
           <Button

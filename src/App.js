@@ -10,9 +10,7 @@ import SoccerPage from './Components/Home/SoccerPage';
 import BasketballPage from './Components/Home/BasketballPage';
 import VolleyballPage from './Components/Home/VolleyballPage';
 import TennisPage from './Components/Home/TennisPage';
-import SideBar from './Components/Common/SideBar';
 import {Login} from './Components/Auth/Login';
-import Register from './Components/Auth/Register';
 import ChampionsPage from './Components/Home/ChampionsPage';
 import Profile from './Components/Home/Profile';
 import Games from './Components/Home/Games';
@@ -21,7 +19,7 @@ import Privacy from './Components/Home/Privacy';
 import { Route, Routes } from 'react-router-dom';
 import { Row, Col, Container, Image, Button, Nav } from 'react-bootstrap';
 
-import { Amplify, AuthModeStrategyType, Auth } from 'aws-amplify';
+import { Amplify, AuthModeStrategyType, Auth, Storage } from 'aws-amplify';
 import { Authenticator, useTheme, Text  } from '@aws-amplify/ui-react';
 import awsExports from './aws-exports';
 

@@ -79,7 +79,12 @@ export const createChampion = /* GraphQL */ `
       records
       phone
       summary
-      img
+      img {
+        bucket
+        region
+        key
+        __typename
+      }
       createdAt
       updatedAt
       _version
@@ -102,7 +107,12 @@ export const updateChampion = /* GraphQL */ `
       records
       phone
       summary
-      img
+      img {
+        bucket
+        region
+        key
+        __typename
+      }
       createdAt
       updatedAt
       _version
@@ -125,7 +135,12 @@ export const deleteChampion = /* GraphQL */ `
       records
       phone
       summary
-      img
+      img {
+        bucket
+        region
+        key
+        __typename
+      }
       createdAt
       updatedAt
       _version
