@@ -5,17 +5,17 @@ import { Divider } from '@aws-amplify/ui-react';
 
 const SideBar = props => {
     return (
-        <Container className='side-bar px-4 py-4'>
+        <Container className='side-bar px-3 py-3'>
         <Row>
-        <Col sm={1}>
-        <Nav className='ms-md-auto'>
-            <h5>Links</h5>
+        <Col>
+        <Nav>
+            <h4>Popular Games</h4>
             <Nav.Link href='/soccer'>Soccer</Nav.Link>
             <Nav.Link href='/basketball'>Basketball</Nav.Link>
             <Nav.Link href='/volleyball'>Volleyball</Nav.Link>
             <Nav.Link href='/tennis'>Tennis</Nav.Link>
             <Divider />
-            <h5>Events</h5>
+            <h4>Latest Events</h4>
             <Divider />
             <Nav.Link href='/events'>Event1</Nav.Link>
             <Nav.Link href='/events'>Event2</Nav.Link>

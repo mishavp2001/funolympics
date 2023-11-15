@@ -1,17 +1,18 @@
 .app-body {
     background-color: rgb(1, 16, 69);
     padding: 5em;
+    font-weight: 600;
 }
 
 .navbar-dark .navbar-brand.brand {
     background: linear-gradient(to left,
-    rgb(222, 10, 105),
-    #db3705,
+    rgb(255, 2, 116),
+    #c52d2d,
     rgb(246, 242, 1),
     rgb(252, 245, 42),
-    rgb(125, 11, 76),
-    rgb(213, 21, 213),
-    rgb(192, 7, 44));
+    rgb(221, 4, 127),
+    rgb(109, 1, 109),
+    rgb(81, 0, 220));
 -webkit-background-clip: text;
 color: transparent;}
 
@@ -23,13 +24,20 @@ color: transparent;}
 }
 
 .side-bar {
-    background-color:  rgb(240, 195, 14);
+    background-color:  rgb(179, 3, 65);
     border-radius: 2em;
-}
+    font-weight: 600;
+    color: rgb(145, 249, 152);
 
-.side-bar a {
-    color:rgb(1, 17, 31);
-    font-weight: 500;
+    .nav {
+        display: block;
+    }
+
+    .nav-link {
+        font-weight: 600;
+        color: white;
+        display: block;
+    }
 }
 
 .small-form {
@@ -39,7 +47,7 @@ color: transparent;}
 }
 
 .home-container {
- background-color: rgb(219, 219, 34);
+ background-color:  rgb(240, 195, 14);
 }
 
 .home-container > div {
@@ -81,6 +89,13 @@ color: transparent;}
 .generic-container, .login-container {
     background-color: rgb(216, 155, 14);
     color: rgb(8, 3, 75);
+    .amplify-input {
+        background-color: rgb(255, 255, 255);
+    }
+    .amplify-button {
+        background-color: rgb(84, 106, 203);
+        color: white;
+    }
 }
 .events-container > div, .champions-container > div, .generic-container > div {
     padding: 1em;
